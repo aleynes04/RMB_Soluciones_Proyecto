@@ -1,0 +1,339 @@
+/* Importación de tipografía premium */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --light-blue: #3b82f6;
+  --light-blue-bg: #eff6ff;
+  --dark-text: #1f2937;
+  --secondary-text: #4b5563;
+  --muted-text: #9ca3af;
+  --bg-light: #e9ecef;
+  --bg-white: #ffffff;
+  --border-color: #e5e7eb;
+  --border-hover: #cbd5e1;
+  
+  /* Status Colors (Gamas de azul y gris) */
+  --status-recibido: #9ca3af; /* Gris */
+  --status-revision: #60a5fa; /* Azul claro */
+  --status-listo: #2563eb;    /* Azul fuerte */
+  --status-entregado: #1e3a8a; /* Azul oscuro */
+  
+  --sidebar-width: 280px;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--dark-text);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* --- DISEÑO DE CONTENEDORES PRINCIPALES --- */
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar-wrapper {
+  width: var(--sidebar-width);
+  background-color: var(--bg-white);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2rem 1.5rem;
+}
+
+.sidebar-header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-brand h1 {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  color: var(--secondary-text);
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-nav .nav-link:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-blue);
+  transform: translateX(4px);
+}
+
+.sidebar-nav .nav-link.active {
+  background-color: var(--light-blue-bg);
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  color: var(--muted-text);
+}
+
+/* Área de Contenido Principal */
+.main-content {
+  flex-grow: 1;
+  margin-left: var(--sidebar-width);
+  padding: 2.5rem;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* --- CABECERA MÓVIL --- */
+.mobile-header {
+  display: none;
+  z-index: 1000;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-white);
+}
+
+/* --- BANNER DE BIENVENIDA (Gradiante Azul) --- */
+.welcome-banner {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-hover) 100%);
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.3);
+}
+
+/* --- TARJETAS PREMIUM --- */
+.card, .feature-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+}
+
+.card:hover, .feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+/* --- ENTRADA DE TEXTO --- */
+.form-control, .form-select {
+  border-color: var(--border-color);
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--light-blue);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.tracking-code-input {
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+/* --- BOTONES --- */
+.btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  font-weight: 550;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-blue-hover);
+  border-color: var(--primary-blue-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  font-weight: 550;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-blue);
+  color: var(--bg-white);
+}
+
+/* --- TABLA --- */
+.table {
+  font-size: 0.95rem;
+}
+.table th {
+  font-weight: 600;
+  color: var(--secondary-text);
+  padding: 1rem;
+}
+.table td {
+  padding: 1rem;
+  color: var(--dark-text);
+}
+
+/* --- ETIQUETAS DE ESTADO (BADGES) --- */
+.badge-status {
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.badge-recibido {
+  background-color: #f3f4f6;
+  color: var(--status-recibido);
+  border: 1px solid #e5e7eb;
+}
+
+.badge-revision {
+  background-color: #eff6ff;
+  color: var(--status-revision);
+  border: 1px solid #dbeafe;
+}
+
+.badge-listo {
+  background-color: #dbeafe;
+  color: var(--status-listo);
+  border: 1px solid #bfdbfe;
+}
+
+.badge-entregado {
+  background-color: #e0e7ff;
+  color: var(--status-entregado);
+  border: 1px solid #c7d2fe;
+}
+
+/* --- LÍNEA DE TIEMPO (TIMELINE) --- */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  margin-top: 1.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -23px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px var(--light-blue-bg);
+}
+
+.timeline-date {
+  font-size: 0.75rem;
+  color: var(--muted-text);
+  margin-bottom: 2px;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark-text);
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+/* --- OTROS --- */
+.text-xs {
+  font-size: 0.75rem;
+}
+.text-sm {
+  font-size: 0.85rem;
+}
+.font-semibold {
+  font-weight: 500;
+}
+.font-monospace {
+  font-family: var(--bs-font-monospace);
+}
+
+/* --- RESPONSIVIDAD (Media Queries) --- */
+
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+  
+  .sidebar-wrapper {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar-wrapper.active {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content-view {
+  animation: fadeIn 0.3s ease-out forwards;
+}

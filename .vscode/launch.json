@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/src/frontend"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Backend (Node.js)",
+            "program": "${workspaceFolder}/src/backend/server.js",
+            "restart": true,
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full Stack (Backend + Chrome)",
+            "configurations": ["Launch Backend (Node.js)", "Launch Chrome against localhost"]
+        }
+    ]
+}

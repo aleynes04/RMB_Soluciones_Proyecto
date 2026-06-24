@@ -1,0 +1,132 @@
+{
+  "clientes": [
+    {
+      "cedula": "12345678",
+      "name": "Juan Perez",
+      "phone": "+56912345678",
+      "createdAt": "2026-06-19T02:25:26.755Z"
+    },
+    {
+      "cedula": "30158353",
+      "name": "esaud rodriguez",
+      "phone": "04123070566",
+      "createdAt": "2026-06-19T02:29:04.774Z"
+    }
+  ],
+  "ordenes_servicio": [
+    {
+      "code": "JJ7MWW",
+      "clientName": "Alejandro Gomez",
+      "clientPhone": "+54 9 11 2345 6789",
+      "deviceType": "Laptop",
+      "deviceBrand": "Lenovo",
+      "deviceModel": "ThinkPad T14",
+      "issueDescription": "Pantalla rota y parpadeos constantes.",
+      "currentStatus": "Listo",
+      "createdAt": "2026-06-18T21:42:55.870Z",
+      "updatedAt": "2026-06-18T22:13:58.499Z",
+      "statusHistory": [
+        {
+          "status": "Recibido",
+          "timestamp": "2026-06-18T21:42:55.870Z",
+          "note": "Equipo ingresado al sistema."
+        },
+        {
+          "status": "En Revisión",
+          "timestamp": "2026-06-18T21:42:55.879Z",
+          "note": "Se desmontó la carcasa y se corroboró falla en el flex de video."
+        },
+        {
+          "status": "Listo",
+          "timestamp": "2026-06-18T22:13:58.499Z",
+          "note": "solucionado"
+        }
+      ],
+      "technicalNotes": "Requiere reemplazo de panel IPS de 14 pulgadas.",
+      "estimatedCost": 150
+    },
+    {
+      "code": "C45ZGS",
+      "clientName": "isaac vivas",
+      "clientPhone": "04123083383",
+      "deviceType": "Otro",
+      "deviceBrand": "canon",
+      "deviceModel": "canon 158",
+      "issueDescription": "falla en los caruvchos",
+      "currentStatus": "Entregado",
+      "createdAt": "2026-06-18T22:12:39.170Z",
+      "updatedAt": "2026-06-19T01:18:22.257Z",
+      "statusHistory": [
+        {
+          "status": "Recibido",
+          "timestamp": "2026-06-18T22:12:39.170Z",
+          "note": "Equipo ingresado al sistema."
+        },
+        {
+          "status": "En Revisión",
+          "timestamp": "2026-06-18T22:13:31.665Z",
+          "note": "vacios"
+        },
+        {
+          "status": "Listo",
+          "timestamp": "2026-06-18T22:15:13.075Z",
+          "note": "solucionado"
+        },
+        {
+          "status": "Entregado",
+          "timestamp": "2026-06-19T01:18:22.257Z",
+          "note": "ok"
+        }
+      ],
+      "technicalNotes": "recarga, limpieza",
+      "estimatedCost": 80
+    },
+    {
+      "code": "K6FCET",
+      "clientCedula": "12345678",
+      "deviceType": "Impresoras",
+      "deviceBrand": "Epson",
+      "deviceModel": "L3210",
+      "issueDescription": "No arrastra papel",
+      "technicalDiagnosis": "Rodillos desgastados",
+      "currentStatus": "Recibido",
+      "createdAt": "2026-06-19T02:25:41.167Z",
+      "updatedAt": "2026-06-19T02:25:41.167Z",
+      "statusHistory": [
+        {
+          "status": "Recibido",
+          "timestamp": "2026-06-19T02:25:41.167Z",
+          "note": "Equipo ingresado al sistema."
+        }
+      ],
+      "technicalNotes": "Cambiar rodillos",
+      "estimatedCost": 45
+    },
+    {
+      "code": "KYUWGJ",
+      "clientCedula": "30158353",
+      "deviceType": "Consola",
+      "deviceBrand": "ubisof",
+      "deviceModel": "xbox x/s",
+      "issueDescription": "sobre calentamiento",
+      "technicalDiagnosis": "falta de pasta termica",
+      "currentStatus": "En Revisión",
+      "createdAt": "2026-06-19T02:30:58.687Z",
+      "updatedAt": "2026-06-19T02:31:24.968Z",
+      "statusHistory": [
+        {
+          "status": "Recibido",
+          "timestamp": "2026-06-19T02:30:58.687Z",
+          "note": "Equipo ingresado al sistema."
+        },
+        {
+          "status": "En Revisión",
+          "timestamp": "2026-06-19T02:31:24.968Z",
+          "note": "en proceso"
+        }
+      ],
+      "technicalNotes": "",
+      "estimatedCost": 35
+    }
+  ]
+}

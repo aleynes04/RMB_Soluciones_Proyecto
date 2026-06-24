@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMB Soluciones | Servicio Técnico Especializado</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts - Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom CSS (Blue & Gray Theme) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Layout Wrapper -->
+  <div class="app-container">
+    
+    <!-- HEADER MÓVIL (Visible solo en dispositivos móviles) -->
+    <header class="mobile-header d-md-none d-flex align-items-center justify-content-between p-3 bg-white border-bottom">
+      <a class="mobile-brand d-flex align-items-center text-decoration-none" href="#" onclick="navigateTo('home')">
+        <img src="logo.jpg" alt="Logo" class="me-2 rounded-2" style="width: 32px; height: 32px; object-fit: contain;">
+        <span class="fw-bold text-dark">RMB <span class="text-primary">Soluciones</span></span>
+      </a>
+      <button class="btn btn-outline-primary border-0 p-2" type="button" onclick="toggleMobileSidebar()">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+    </header>
+
+    <!-- BARRA LATERAL (Sidebar) -->
+    <aside class="sidebar-wrapper" id="sidebar">
+      <div class="sidebar-header d-flex align-items-center justify-content-between">
+        <a class="sidebar-brand d-flex align-items-center text-decoration-none" href="#" onclick="navigateTo('home')">
+          <img src="logo.jpg" alt="Logo" class="me-2 rounded-2" style="width: 40px; height: 40px; object-fit: contain;">
+          <div>
+            <h1 class="h5 fw-bold text-dark mb-0">RMB</h1>
+            <span class="text-secondary text-xs">Soluciones</span>
+          </div>
+        </a>
+        <button class="btn btn-close d-md-none" type="button" onclick="toggleMobileSidebar()"></button>
+      </div>
+
+      <nav class="sidebar-nav mt-4">
+        <ul class="nav flex-column gap-2">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" id="nav-home" onclick="navigateTo('home', event)">
+              <i class="bi bi-house-door-fill me-3 fs-5"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="nav-search" onclick="navigateTo('search', event)">
+              <i class="bi bi-search me-3 fs-5"></i>
+              <span>Consulta</span>
+            </a>
+          </li>
+          <li class="nav-item border-top pt-3 mt-3">
+            <a href="#" class="nav-link" id="nav-login" onclick="navigateTo('login', event)">
+              <i class="bi bi-shield-lock-fill me-3 fs-5"></i>
+              <span id="login-nav-text">Inicio de Sesión</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Footer Info -->
+      <div class="sidebar-footer mt-auto p-3 text-center border-top">
+        <span class="text-secondary text-xs">© 2026 RMB Soluciones</span>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL (Main Content) -->
+    <main class="main-content" id="main-content">
+      
+      <!-- ========================================== -->
+      <!-- VISTA 1: INICIO (BIENVENIDA)               -->
+      <!-- ========================================== -->
+      <section id="view-home" class="content-view">
+        <div class="welcome-banner p-5 rounded-4 mb-4 text-white">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <span class="badge bg-light text-primary fw-bold px-3 py-2 rounded-pill mb-3">SERVICIOS DE ALTO NIVEL</span>
+              <h2 class="display-5 fw-bold mb-3">Bienvenido a RMB Soluciones</h2>
+              <p class="lead text-white-50 mb-4">
+                Líderes en reparación técnica y mantenimiento de equipos electrónicos. Ofrecemos transparencia, rapidez y fiabilidad en cada servicio.
+              </p>
+              <div class="d-flex flex-wrap gap-3">
+                <button class="btn btn-light text-primary btn-lg fw-semibold px-4" onclick="navigateTo('search')">
+                  <i class="bi bi-search me-2"></i>Consultar Orden
+                </button>
+                <button class="btn btn-outline-light btn-lg px-4" onclick="navigateTo('login')">
+                  <i class="bi bi-lock me-2"></i>Acceso Técnico
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-4 d-none d-lg-block text-center">
+              <i class="bi bi-pc-display-horizontal text-white opacity-25" style="font-size: 10rem;"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card p-4 rounded-4 bg-white border border-light h-100">
+              <div class="icon-wrapper bg-light text-primary rounded-3 mb-3">
+                <i class="bi bi-shield-check fs-4"></i>
+              </div>
+              <h5 class="fw-bold text-dark">Garantía Asegurada</h5>
+              <p class="text-secondary mb-0">Todas nuestras reparaciones cuentan con garantía directa y repuestos de alta calidad seleccionados meticulosamente.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card p-4 rounded-4 bg-white border border-light h-100">
+              <div class="icon-wrapper bg-light text-primary rounded-3 mb-3">
+                <i class="bi bi-clock-history fs-4"></i>
+              </div>
+              <h5 class="fw-bold text-dark">Seguimiento Digital</h5>
+              <p class="text-secondary mb-0">Consulta en tiempo real la evolución de tu orden mediante el código de seguimiento provisto por el técnico.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card p-4 rounded-4 bg-white border border-light h-100">
+              <div class="icon-wrapper bg-light text-primary rounded-3 mb-3">
+                <i class="bi bi-printer fs-4"></i>
+              </div>
+              <h5 class="fw-bold text-dark">Servicio Multidispositivo</h5>
+              <p class="text-secondary mb-0">Especialistas en computadores, laptops, smartphones, y ahora mantenimiento integral de impresoras.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VISTA 2: CONSULTA (PÚBLICO)                -->
+      <!-- ========================================== -->
+      <section id="view-search" class="content-view d-none">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 text-center mb-4">
+            <h2 class="fw-bold text-dark mb-2">Consulta de Estado</h2>
+            <p class="text-secondary">Ingresa el código alfanumérico de 6 caracteres impreso en tu comprobante de servicio para rastrear tu equipo.</p>
+          </div>
+        </div>
+
+        <!-- Buscador de Código -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+              <form id="search-form" onsubmit="searchService(event)">
+                <div class="mb-4">
+                  <label for="search-code" class="form-label fw-bold text-secondary text-sm mb-2">Código de Seguimiento</label>
+                  <input type="text" class="form-control form-control-lg text-center tracking-code-input font-monospace text-uppercase" 
+                         id="search-code" placeholder="Ejem: TR98A1" maxlength="6" autocomplete="off" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 py-3 rounded-3">
+                  <i class="bi bi-search me-2"></i>Consultar Estado del Dispositivo
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel de Resultados del Cliente -->
+        <div class="row justify-content-center d-none" id="client-result-container">
+          <div class="col-md-10 col-lg-8">
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+              <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-4">
+                <div>
+                  <h3 class="h5 mb-1 fw-bold text-dark">Orden de Servicio: <span id="res-code" class="font-monospace text-primary fw-bold"></span></h3>
+                  <span class="text-secondary text-xs">Ingreso: <span id="res-date"></span></span>
+                </div>
+                <div class="mt-2 mt-sm-0">
+                  <span id="res-badge-status" class="badge-status"></span>
+                </div>
+              </div>
+
+              <!-- Detalles del Dispositivo -->
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <div class="text-secondary text-xs mb-1"><i class="bi bi-laptop me-1"></i> Dispositivo</div>
+                    <div class="fw-semibold text-dark fs-6" id="res-device"></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <div class="text-secondary text-xs mb-1"><i class="bi bi-exclamation-triangle me-1"></i> Falla Reportada</div>
+                    <div class="text-dark text-sm" id="res-issue"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Línea de Tiempo del Historial -->
+              <h4 class="h6 text-secondary fw-bold mb-3 text-uppercase"><i class="bi bi-clock-history me-1"></i> Historial de Actualizaciones</h4>
+              <div class="timeline" id="res-timeline">
+                <!-- Cargado dinámicamente -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VISTA 3: INICIO DE SESIÓN                  -->
+      <!-- ========================================== -->
+      <section id="view-login" class="content-view d-none">
+        <div class="row justify-content-center align-items-center" style="min-height: 60vh;">
+          <div class="col-md-6 col-lg-5">
+            <div class="card border-0 shadow-sm p-4 p-sm-5 rounded-4 bg-white">
+              <div class="text-center mb-4">
+                <div class="mb-3">
+                  <img src="logo.jpg" alt="Logo RMB" class="rounded-4" style="width: 100px; height: 100px; object-fit: contain;">
+                </div>
+                <h3 class="fw-bold text-dark">Acceso Técnico</h3>
+                <p class="text-secondary text-sm">Inicia sesión para acceder a la gestión de clientes y órdenes.</p>
+              </div>
+
+              <form id="tech-login-form" onsubmit="authenticateTech(event)">
+                <div class="mb-4">
+                  <label for="tech-password" class="form-label fw-bold text-secondary text-sm">Clave de acceso</label>
+                  <input type="password" class="form-control form-control-lg text-center" id="tech-password" 
+                         placeholder="Ingresar clave: admin123" required>
+                  <div id="login-error-msg" class="text-danger text-xs mt-2 d-none">
+                    <i class="bi bi-exclamation-circle me-1"></i> Clave incorrecta.
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 py-3 rounded-3">
+                  <i class="bi bi-box-arrow-in-right me-2"></i>Iniciar Sesión
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- VISTA 4: PANEL TÉCNICO (DASHBOARD)         -->
+      <!-- ========================================== -->
+      <section id="view-dashboard" class="content-view d-none">
+        <!-- Dashboard Header -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-3 mb-4">
+          <div>
+            <h2 class="fw-bold text-dark mb-1"><i class="bi bi-speedometer2 text-primary me-2"></i>Panel Técnico</h2>
+            <p class="text-secondary text-sm mb-0">Gestión centralizada de clientes y órdenes de RMB Soluciones.</p>
+          </div>
+          <div class="d-flex gap-2 mt-3 mt-md-0">
+            <button class="btn btn-outline-danger btn-sm rounded-3 px-3" onclick="logoutTech()">
+              <i class="bi bi-box-arrow-left me-1"></i> Cerrar Sesión
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard Navigation Tabs -->
+        <ul class="nav nav-pills mb-4 gap-2" id="dashboardTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-pill px-4 py-2" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders-pane" type="button" role="tab">
+              <i class="bi bi-list-task me-2"></i>Órdenes de Trabajo
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill px-4 py-2" id="clients-tab" data-bs-toggle="tab" data-bs-target="#clients-pane" type="button" role="tab">
+              <i class="bi bi-people-fill me-2"></i>Gestión de Clientes
+            </button>
+          </li>
+        </ul>
+
+        <!-- Dashboard Tab Content -->
+        <div class="tab-content" id="dashboardTabsContent">
+          
+          <!-- PESTAÑA 1: ÓRDENES DE TRABAJO -->
+          <div class="tab-pane fade show active" id="orders-pane" role="tabpanel">
+            
+            <!-- Resumen de Métricas -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm p-3 rounded-4 bg-white border-start border-primary border-4">
+                  <div class="text-secondary text-xs fw-semibold text-uppercase">Recibidos</div>
+                  <div class="fs-2 fw-bold text-dark mt-1" id="stat-recibido">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm p-3 rounded-4 bg-white border-start border-warning border-4">
+                  <div class="text-secondary text-xs fw-semibold text-uppercase">En Revisión</div>
+                  <div class="fs-2 fw-bold text-dark mt-1" id="stat-revision">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm p-3 rounded-4 bg-white border-start border-success border-4">
+                  <div class="text-secondary text-xs fw-semibold text-uppercase">Listos</div>
+                  <div class="fs-2 fw-bold text-dark mt-1" id="stat-listo">0</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="card border-0 shadow-sm p-3 rounded-4 bg-white border-start border-info border-4">
+                  <div class="text-secondary text-xs fw-semibold text-uppercase">Entregados</div>
+                  <div class="fs-2 fw-bold text-dark mt-1" id="stat-entregado">0</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabla de Órdenes -->
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+              <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-3">
+                <h4 class="fw-bold text-dark mb-0"><i class="bi bi-card-checklist text-primary me-2"></i>Equipos en Taller</h4>
+                <div class="d-flex gap-2 align-items-center">
+                  <input type="text" class="form-control form-control-sm border-light-subtle rounded-3" id="table-filter" 
+                         placeholder="Filtrar código, cliente..." onkeyup="filterTable()" style="max-width: 200px;">
+                  <button class="btn btn-primary btn-sm rounded-3 px-3" data-bs-toggle="modal" data-bs-target="#newOrderModal" onclick="prepareNewOrderModal()">
+                    <i class="bi bi-plus-lg me-1"></i> Nueva Orden
+                  </button>
+                </div>
+              </div>
+              
+              <div class="table-responsive">
+                <table class="table align-middle">
+                  <thead>
+                    <tr>
+                      <th class="border-0 bg-light rounded-start">Código</th>
+                      <th class="border-0 bg-light">Cliente</th>
+                      <th class="border-0 bg-light">Dispositivo</th>
+                      <th class="border-0 bg-light">Estado</th>
+                      <th class="border-0 bg-light">Última Actividad</th>
+                      <th class="border-0 bg-light text-end rounded-end">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="orders-table-body">
+                    <!-- Cargado dinámicamente -->
+                    <tr>
+                      <td colspan="6" class="text-center py-4 text-secondary">Cargando datos...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- PESTAÑA 2: GESTIÓN DE CLIENTES -->
+          <div class="tab-pane fade" id="clients-pane" role="tabpanel">
+            <div class="row g-4">
+              <!-- Formulario de Registro de Clientes -->
+              <div class="col-lg-4">
+                <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+                  <h4 class="fw-bold text-dark mb-3"><i class="bi bi-person-plus-fill text-primary me-2"></i>Registrar Cliente</h4>
+                  
+                  <form id="new-client-form" onsubmit="registerClient(event)">
+                    <div class="mb-3">
+                      <label for="clientCedula" class="form-label fw-bold text-secondary text-sm">Cédula de Identidad (ID) <span class="text-primary">*</span></label>
+                      <input type="text" class="form-control" id="clientCedula" required placeholder="Ejem: 12345678" minlength="6">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="clientName" class="form-label fw-bold text-secondary text-sm">Nombre Completo <span class="text-primary">*</span></label>
+                      <input type="text" class="form-control" id="clientName" required placeholder="Ejem: Juan Pérez">
+                    </div>
+                    
+                    <div class="mb-3">
+                      <label for="clientPhone" class="form-label fw-bold text-secondary text-sm">Teléfono de Contacto <span class="text-primary">*</span></label>
+                      <input type="tel" class="form-control" id="clientPhone" required placeholder="Ejem: +56912345678">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-3">
+                      <i class="bi bi-save me-1"></i> Guardar Cliente
+                    </button>
+                  </form>
+                </div>
+              </div>
+              
+              <!-- Lista/Tabla de Clientes -->
+              <div class="col-lg-8">
+                <div class="card border-0 shadow-sm p-4 rounded-4 bg-white h-100">
+                  <h4 class="fw-bold text-dark mb-3"><i class="bi bi-people-fill text-primary me-2"></i>Clientes Registrados</h4>
+                  <div class="table-responsive">
+                    <table class="table align-middle">
+                      <thead>
+                        <tr>
+                          <th class="border-0 bg-light rounded-start">Cédula (ID)</th>
+                          <th class="border-0 bg-light">Nombre</th>
+                          <th class="border-0 bg-light">Teléfono</th>
+                          <th class="border-0 bg-light text-end rounded-end">Registrado</th>
+                        </tr>
+                      </thead>
+                      <tbody id="clients-table-body">
+                        <!-- Cargado dinámicamente -->
+                        <tr>
+                          <td colspan="4" class="text-center py-4 text-secondary">Cargando clientes...</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL: REGISTRO DE ORDEN (NUEVO INGRESO) -->
+  <div class="modal fade" id="newOrderModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow-lg bg-white">
+        <div class="modal-header border-bottom py-3">
+          <h5 class="modal-title fw-bold text-dark"><i class="bi bi-plus-circle-fill text-primary me-2"></i>Generar Orden de Servicio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="new-order-form" onsubmit="registerOrder(event)">
+            
+            <!-- Bloque de Búsqueda y Autorelleno de Cliente -->
+            <div class="bg-light p-3 rounded-3 mb-4">
+              <h6 class="fw-bold text-primary mb-3"><i class="bi bi-search me-1"></i> Asignación de Cliente</h6>
+              <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                  <label for="orderClientCedula" class="form-label fw-bold text-secondary text-sm">Cédula del Cliente <span class="text-primary">*</span></label>
+                  <input type="text" class="form-control bg-white" id="orderClientCedula" required placeholder="Cédula a buscar..." oninput="handleCedulaLookup(this.value)">
+                </div>
+                <div class="col-md-8">
+                  <!-- Info de búsqueda en vivo -->
+                  <div id="cedula-lookup-feedback" class="text-xs fw-semibold p-2 rounded-2 mt-1 bg-white border border-light-subtle d-flex align-items-center">
+                    <i class="bi bi-info-circle me-2 text-secondary"></i> 
+                    <span class="text-secondary">Ingrese una cédula registrada para verificar...</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Campos Autorellenados (Lectura únicamente) -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <label for="orderClientName" class="form-label fw-bold text-secondary text-sm">Nombre Completo</label>
+                  <input type="text" class="form-control" id="orderClientName" readonly placeholder="Autorellenado..." disabled>
+                </div>
+                <div class="col-md-6">
+                  <label for="orderClientPhone" class="form-label fw-bold text-secondary text-sm">Teléfono</label>
+                  <input type="text" class="form-control" id="orderClientPhone" readonly placeholder="Autorellenado..." disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- Datos de la Máquina -->
+            <h6 class="fw-bold text-primary mb-3"><i class="bi bi-laptop me-1"></i> Ficha Técnica del Dispositivo</h6>
+            
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label for="devType" class="form-label fw-bold text-secondary text-sm">Tipo de Dispositivo <span class="text-primary">*</span></label>
+                <select class="form-select" id="devType" required>
+                  <option value="" disabled selected>Seleccione...</option>
+                  <option value="Impresoras">Impresoras</option>
+                  <option value="Laptop">Laptop / Notebook</option>
+                  <option value="Celular">Celular / Smartphone</option>
+                  <option value="Tablet">Tablet</option>
+                  <option value="Consola">Consola de Videojuegos</option>
+                  <option value="Otro">Otro dispositivo</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="devBrand" class="form-label fw-bold text-secondary text-sm">Marca <span class="text-primary">*</span></label>
+                <input type="text" class="form-control" id="devBrand" required placeholder="Ejem: Epson, HP, Lenovo">
+              </div>
+              <div class="col-md-4">
+                <label for="devModel" class="form-label fw-bold text-secondary text-sm">Modelo <span class="text-primary">*</span></label>
+                <input type="text" class="form-control" id="devModel" required placeholder="Ejem: L3210, LaserJet, ThinkPad">
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="issueDesc" class="form-label fw-bold text-secondary text-sm">Falla Reportada (Cliente) <span class="text-primary">*</span></label>
+                <textarea class="form-control" id="issueDesc" rows="3" required placeholder="Describe los síntomas y problemas reportados..."></textarea>
+              </div>
+              <div class="col-md-6">
+                <label for="techDiagnosis" class="form-label fw-bold text-secondary text-sm">Diagnóstico Técnico Inicial <span class="text-primary">*</span></label>
+                <textarea class="form-control" id="techDiagnosis" rows="3" required placeholder="Resultado preliminar del análisis técnico..."></textarea>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="techNotes" class="form-label fw-bold text-secondary text-sm">Notas Técnicas Internas <span class="text-muted">(Privado)</span></label>
+                <textarea class="form-control" id="techNotes" rows="2" placeholder="Notas adicionales privadas, piezas requeridas..."></textarea>
+              </div>
+              <div class="col-md-6">
+                <label for="estCost" class="form-label fw-bold text-secondary text-sm">Presupuesto Estimado</label>
+                <div class="input-group">
+                  <span class="input-group-text">$</span>
+                  <input type="number" class="form-control" id="estCost" min="0" value="0" step="0.01">
+                </div>
+              </div>
+            </div>
+
+            <div class="text-end mt-4 border-top pt-3">
+              <button type="button" class="btn btn-outline-secondary px-4 rounded-3 border-0 me-2" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary px-4 rounded-3" id="btn-submit-order" disabled>Generar Orden de Servicio</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: VER DETALLE & ACTUALIZAR ESTADO (TÉCNICO) -->
+  <div class="modal fade" id="updateStatusModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow-lg bg-white">
+        <div class="modal-header border-bottom py-3">
+          <h5 class="modal-title fw-bold text-dark"><i class="bi bi-sliders2 text-primary me-2"></i>Actualizar Estado de la Orden</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4">
+            <!-- Resumen de la Orden -->
+            <div class="col-md-7">
+              <h5 class="fw-bold text-dark mb-3">Ficha de Servicio</h5>
+              <div class="p-3 bg-light rounded-3 mb-3">
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Código Tracking:</span> <strong id="modal-code" class="font-monospace text-primary fs-6"></strong></p>
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Cliente:</span> <span id="modal-client" class="text-dark fw-bold"></span></p>
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Contacto:</span> <span id="modal-phone" class="text-secondary text-sm"></span></p>
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Dispositivo:</span> <span id="modal-device" class="text-dark"></span></p>
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Falla Reportada:</span> <span id="modal-issue" class="text-dark"></span></p>
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Diagnóstico Inicial:</span> <span id="modal-diagnosis" class="text-dark fw-medium"></span></p>
+                <p class="mb-2 text-sm"><span class="text-secondary font-semibold">Presupuesto:</span> <span id="modal-cost" class="text-success fw-bold"></span></p>
+                <p class="mb-0 text-sm"><span class="text-secondary font-semibold">Observación Privada:</span> <span id="modal-notes" class="text-muted text-xs italic"></span></p>
+              </div>
+            </div>
+            
+            <!-- Actualización de Estado -->
+            <div class="col-md-5">
+              <h5 class="fw-bold text-dark mb-3">Nuevo Estado</h5>
+              <form id="update-status-form" onsubmit="submitStatusUpdate(event)">
+                <input type="hidden" id="update-target-code">
+                
+                <div class="mb-3">
+                  <label for="updateStatusSelect" class="form-label fw-bold text-secondary text-sm">Estado Actual <span class="text-primary">*</span></label>
+                  <select class="form-select" id="updateStatusSelect" required>
+                    <option value="Recibido">Recibido</option>
+                    <option value="En Revisión">En Revisión</option>
+                    <option value="Listo">Listo (Reparado)</option>
+                    <option value="Entregado">Entregado al Cliente</option>
+                  </select>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="updateStatusNote" class="form-label fw-bold text-secondary text-sm">Nota Técnica Explicativa <span class="text-primary">*</span></label>
+                  <textarea class="form-control" id="updateStatusNote" rows="3" required placeholder="Ejem: Se reemplazaron rodillos de arrastre de papel y engranajes principales."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-3">
+                  <i class="bi bi-save me-1"></i> Guardar Cambios
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <h5 class="h6 fw-bold text-secondary text-uppercase mb-3"><i class="bi bi-clock-history me-1"></i> Historial de Auditoría de la Orden</h5>
+          <div class="timeline" id="modal-timeline">
+            <!-- Cargado dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ÉXITO (NUEVO INGRESO) -->
+  <div class="modal fade" id="successOrderModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 rounded-4 shadow-lg text-center bg-white">
+        <div class="modal-body p-5">
+          <div class="icon-wrapper bg-success-subtle text-success rounded-circle d-inline-flex p-3 mb-4">
+            <i class="bi bi-check-circle-fill fs-1"></i>
+          </div>
+          <h4 class="fw-bold text-dark mb-2">¡Orden Registrada!</h4>
+          <p class="text-secondary text-sm mb-4">Entrega el siguiente código de seguimiento único al cliente para su consulta:</p>
+          <div class="p-3 bg-light rounded-3 my-3 border border-dashed">
+            <span class="code-display font-monospace fw-bold text-primary fs-3" id="success-code-display">------</span>
+          </div>
+          <p class="text-muted text-xs mb-4">El cliente puede usarlo en la pestaña de Consulta en cualquier momento.</p>
+          <button type="button" class="btn btn-primary btn-lg w-100 py-2.5 rounded-3" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lógica de Cliente JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>
