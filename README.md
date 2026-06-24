@@ -5,8 +5,8 @@
 ---
 
 ## 1. Datos generales
-* **Asignatura**: Lenguaje de Programación 3 (LP3)
-* **Modalidad**: Individual
+* **Asignatura**: Lenguaje de Programación 3 
+* **Modalidad**: Grupal Aleynes Valbuena V-30142570 Isaac Vivas V-30158353
 * **Formato documental**: Markdown (.md)
 * **Tipo de proyecto**: Aplicación de Gestión y Seguimiento de Servicio Técnico
 * **Objetivo formativo**: Aplicar buenas prácticas de arquitectura cliente-servidor (SPA + REST API), diseño relacional con Cédula como PK, manejo estructurado de reglas de negocio y control de transiciones asistido por directrices de IA (**Rules** y **Agents**).
